@@ -1,16 +1,17 @@
-from sets_categories_data import (ALCOHOLS)
-def clean_ingredients(dish_name, dish_ingredients):
-    y = set(dish_ingredients)
-    return (dish_name, y)
-
-
-
-def check_drinks(drink_name, drink_ingredients):
-    y = ""
-    for ingredient in drink_ingredients:
-        if ingredient in ALCOHOLS:
-            y = "Cocktail"
-            break
-        else:
-            y = "Mocktail"
-    return f"{drink_name}{y}"
+def enumerate_list(strings):
+    result = []
+    count = 0 
+    for string in strings:
+        if string: 
+            result.append(f"{count}. {string}")
+            count += 1
+    return result
+def enumerate_backwards(strings):
+    result = []
+    count = 0  
+    for string in strings:
+        if string: 
+            reversed_string = string[::-1]
+            result.append(f"{count}. {reversed_string}")
+            count += 1
+    return result
